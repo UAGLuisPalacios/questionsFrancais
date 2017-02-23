@@ -1,19 +1,18 @@
 //
-//  RecipeCell.swift
+//  TableViewCellQuestionCell.swift
 //  MisRecetas
 //
-//  Created by Luis Yoshino on 20/02/17.
+//  Created by Luis Yoshino on 23/02/17.
 //  Copyright © 2017 Luis Yoshino. All rights reserved.
 //
 
 import UIKit
 
-class RecipeCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var thumbnailImageView: UIImageView!
+class TableViewCellQuestionCell: UITableViewCell {
+    
+    @IBOutlet weak var imageQuestion: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

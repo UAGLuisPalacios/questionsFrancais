@@ -1,26 +1,25 @@
 //
-//  RecipeCellViewController.swift
+//  TableViewCellQuestionController.swift
 //  MisRecetas
 //
-//  Created by Luis Yoshino on 22/02/17.
+//  Created by Luis Yoshino on 23/02/17.
 //  Copyright © 2017 Luis Yoshino. All rights reserved.
 //
 
 import UIKit
 
-class RecipeCellViewController: UIViewController {
+class TableViewCellQuestionController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var recipeImage: UIImageView!
-    var recipe : Recipe!
+    @IBOutlet weak var labelQuestionCell: UILabel!
+    @IBOutlet weak var imageQuestionCell: UIImageView!
+    var question : ClassQuestion!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.recipeImage.image = self.recipe.image
-        self.titleLabel.text = self.recipe.name
-
+        self.labelQuestionCell.text = question.title
+        self.imageQuestionCell.image = question.image
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,7 +27,7 @@ class RecipeCellViewController: UIViewController {
 
 }
 
-extension RecipeCellViewController : UITableViewDataSource {
+extension TableViewCellQuestionController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -38,16 +37,16 @@ extension RecipeCellViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailRecipeCell", for: indexPath) as! RecipeDetailViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailQuestionCell", for: indexPath) as! TableViewCellDetailQuestion
         
         switch indexPath.row {
         case 0:
-            cell.keyLabel.text = "Nombre: "
-            cell.valueLabel.text = self.recipe.name
+            cell.keyLabel.text = "Titulo: "
+            cell.valueLabel.text = self.question.title
             break
         case 1:
-            cell.keyLabel.text = "Tiempo: "
-            cell.valueLabel.text = "\(self.recipe.time!) min"
+            cell.keyLabel.text = "Tipo: "
+            cell.valueLabel.text = self.question.type!
             break
         case 2:
             cell.keyLabel.text = "Favorita: "
@@ -61,6 +60,6 @@ extension RecipeCellViewController : UITableViewDataSource {
     
 }
 
-extension RecipeCellViewController : UITableViewDelegate {
+extension TableViewCellQuestionController : UITableViewDelegate {
     
 }

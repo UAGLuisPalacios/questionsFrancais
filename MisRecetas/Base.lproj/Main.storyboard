@@ -29,14 +29,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="832-Mp-90R" customClass="RecipeCell" customModule="MisRecetas" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="QuestionCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" id="832-Mp-90R" customClass="TableViewCellQuestionCell" customModule="MisRecetas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="832-Mp-90R" id="fhD-ld-oy4">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YIF-rk-MB0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YIF-rk-MB0" userLabel="image Question">
                                                     <rect key="frame" x="8" y="8" width="83" height="83"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="YIF-rk-MB0" secondAttribute="height" multiplier="1:1" id="FaA-RU-uca"/>
@@ -44,31 +44,21 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="533-1s-HVo">
-                                                    <rect key="frame" x="108" y="19" width="42" height="61"/>
+                                                    <rect key="frame" x="108" y="29" width="42" height="41"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFn-MU-vCs">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFn-MU-vCs" userLabel="titleLabel">
                                                             <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfG-WN-V1A">
-                                                            <rect key="frame" x="0.0" y="20.5" width="42" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-lz-r2v">
-                                                            <rect key="frame" x="0.0" y="40.5" width="42" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfG-WN-V1A" userLabel="typeLabel">
+                                                            <rect key="frame" x="0.0" y="20.5" width="42" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="MfG-WN-V1A" secondAttribute="bottom" constant="20" symbolic="YES" id="WBg-Cc-nVX"/>
-                                                        <constraint firstItem="JCS-lz-r2v" firstAttribute="top" secondItem="rFn-MU-vCs" secondAttribute="bottom" constant="20" id="sTZ-NN-7c8"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -80,17 +70,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ingredientsLabel" destination="JCS-lz-r2v" id="fpD-wO-D3X"/>
-                                            <outlet property="nameLabel" destination="rFn-MU-vCs" id="EBq-Sg-ryB"/>
-                                            <outlet property="thumbnailImageView" destination="YIF-rk-MB0" id="jpQ-0K-0Qm"/>
-                                            <outlet property="timeLabel" destination="MfG-WN-V1A" id="1tE-Zj-bH5"/>
-                                            <segue destination="erg-Pg-a7n" kind="show" identifier="showRecipeDetail" id="Li6-YD-xIg"/>
+                                            <outlet property="imageQuestion" destination="YIF-rk-MB0" id="VC1-iB-eBL"/>
+                                            <outlet property="titleLabel" destination="rFn-MU-vCs" id="H52-KT-Wyq"/>
+                                            <outlet property="typeLabel" destination="MfG-WN-V1A" id="e9V-RT-5ay"/>
+                                            <segue destination="erg-Pg-a7n" kind="show" identifier="showQuestionDetail" id="Li6-YD-xIg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Zeu-dc-Qef"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bhu-Ci-Woc"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RtK-wR-KGG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Mdw-gf-unM"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -105,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1618.4000000000001" y="10.344827586206897"/>
         </scene>
-        <!--Recipe Cell View Controller-->
+        <!--Table View Cell Question Controller-->
         <scene sceneID="7ol-Fe-VcK">
             <objects>
-                <viewController id="erg-Pg-a7n" customClass="RecipeCellViewController" customModule="MisRecetas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="erg-Pg-a7n" customClass="TableViewCellQuestionController" customModule="MisRecetas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="evw-cU-r8L"/>
                         <viewControllerLayoutGuide type="bottom" id="Nk0-js-mk1"/>
@@ -127,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DetailRecipeCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailRecipeCell" id="Gpg-SB-pAG" customClass="RecipeDetailViewCell" customModule="MisRecetas" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DetailQuestionCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailQuestionCell" id="Gpg-SB-pAG" customClass="TableViewCellDetailQuestion" customModule="MisRecetas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gpg-SB-pAG" id="0VL-lt-qSg">
@@ -143,7 +132,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zk-XA-q1o" customClass="r">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zk-XA-q1o">
                                                             <rect key="frame" x="119.5" y="0.0" width="239.5" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -163,8 +152,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="keyLabel" destination="oUG-dD-hcK" id="uLy-9M-Nbg"/>
-                                            <outlet property="valueLabel" destination="0Zk-XA-q1o" id="ulx-h8-12u"/>
+                                            <outlet property="keyLabel" destination="oUG-dD-hcK" id="IVK-Hr-P3U"/>
+                                            <outlet property="valueLabel" destination="0Zk-XA-q1o" id="oaQ-UB-PCn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -194,8 +183,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recipeImage" destination="zFV-Mf-yf4" id="DnX-HD-AAF"/>
-                        <outlet property="titleLabel" destination="6FX-3O-RzZ" id="z4v-FU-5Fr"/>
+                        <outlet property="imageQuestionCell" destination="zFV-Mf-yf4" id="gFY-sT-aUc"/>
+                        <outlet property="labelQuestionCell" destination="6FX-3O-RzZ" id="p5b-Nz-XGU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9t-ab-Zmq" userLabel="First Responder" sceneMemberID="firstResponder"/>

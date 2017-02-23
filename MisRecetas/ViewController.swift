@@ -10,44 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var recipes : [Recipe] = []
     var questions : [ClassQuestion] = []
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var recipe = Recipe(name: "Tortilla de patatas",
+        var question = ClassQuestion(title: "Les Numerós",
                             image: #imageLiteral(resourceName: "tortilla"),
-                            time:20,
-                            ingredients: ["Patatas", "Huevos", "Cebolla"],
-                            steps: ["Pelar las patatas y cebollas",
-                                    "Cortar las patatas y la cebolla y sofreir",
-                                    "Batir los huevos y echarlos 1 minuto a la sarten con el resto"])
-        recipes.append(recipe)
-        recipe = Recipe(name: "Pizza",
+                            type: "Tableau")
+        questions.append(question)
+        question = ClassQuestion(title: "Les Pays",
                         image: #imageLiteral(resourceName: "pizza"),
-                        time:20,
-                        ingredients: ["Patatas", "Huevos", "Cebolla"],
-                        steps: ["Pelar las patatas y cebollas",
-                                "Cortar las patatas y la cebolla y sofreir",
-                                "Batir los huevos y echarlos 1 minuto a la sarten con el resto"])
-        recipes.append(recipe)
-        recipe = Recipe(name: "Hamburguesa con queso",
+                        type: "Tableau")
+        questions.append(question)
+        question = ClassQuestion(title: "La Communication en Class",
                         image: #imageLiteral(resourceName: "hamburguesa"),
-                        time:20,
-                        ingredients: ["Patatas", "Huevos",  "Cebolla"],
-                        steps: ["Pelar las patatas y cebollas",
-                                "Cortar las patatas y la cebolla y sofreir",
-                                "Batir los huevos y echarlos 1 minuto a la sarten con el resto"])
-        recipes.append(recipe)
-        recipe = Recipe(name: "Ensalada Cesar",
+                        type: "Questionner")
+        questions.append(question)
+        question = ClassQuestion(title: "Questioner Sur l' identidé",
                         image: #imageLiteral(resourceName: "ensalada"),
-                        time:20,
-                        ingredients: ["Patatas", "Huevos", "Cebolla"],
-                        steps: ["Pelar las patatas y cebollas",
-                                "Cortar las patatas y la cebolla y sofreir",
-                                "Batir los huevos y echarlos 1 minuto a la sarten con el resto"])
-        recipes.append(recipe)
+                        type: "Questionner")
+        questions.append(question)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,11 +39,11 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRecipeDetail" {
+        if segue.identifier == "showQuestionDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let selectedRecipe = self.recipes[indexPath.row]
-                let destinationViewController = segue.destination as! RecipeCellViewController
-                destinationViewController.recipe = selectedRecipe
+                let selectedQuestion = self.questions[indexPath.row]
+                let destinationViewController = segue.destination as! TableViewCellQuestionController
+                destinationViewController.question = selectedQuestion
             }
         }
     }
@@ -73,21 +56,20 @@ extension ViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.recipes.count
+        return self.questions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let recipe = recipes[indexPath.row]
-        let cellID = "RecipeCell"
+        let question = questions[indexPath.row]
+        let cellID = "QuestionCell"
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! RecipeCell
-        cell.thumbnailImageView.image = recipe.image
-        cell.nameLabel.text = recipe.name
-        cell.timeLabel.text = "\(recipe.time!) min"
-        cell.ingredientsLabel.text = "Ingredientes: \(recipe.ingredients.count)"
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TableViewCellQuestionCell
+        cell.imageQuestion.image = question.image
+        cell.titleLabel.text = question.title
+        cell.typeLabel.text = question.type!
         
-        cell.thumbnailImageView.layer.cornerRadius = 42.0
-        cell.thumbnailImageView.clipsToBounds = true
+        cell.imageQuestion.layer.cornerRadius = 42.0
+        cell.imageQuestion.clipsToBounds = true
         
         
         
