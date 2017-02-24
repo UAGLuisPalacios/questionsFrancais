@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "penglai-1771838_1280.jpg",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "pizza-1949157_1280.jpg",
       "scale" : "3x"
     }
   ],

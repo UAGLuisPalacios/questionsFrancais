@@ -13,11 +13,15 @@ class ClassQuestion: NSObject {
     var title : String!
     var image : UIImage!
     var type: String!
+    var table: [String]!
+    var audioName: [String]!
     
-    init(title: String, image: UIImage, type: String) {
+    init(title: String, image: UIImage, type: String, table: [String], audioName: [String]! ) {
         self.title = title
         self.image = image
         self.type = type
+        self.table = table
+        self.audioName = audioName
     }
 }
 

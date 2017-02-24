@@ -16,6 +16,7 @@
 		E8D97ED61E5EC37B00A00425 /* TableViewCellQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D97ED51E5EC37B00A00425 /* TableViewCellQuestionController.swift */; };
 		E8D97ED81E5ED4B800A00425 /* TableViewCellDetailQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D97ED71E5ED4B800A00425 /* TableViewCellDetailQuestion.swift */; };
 		E8D97EDA1E5ED90F00A00425 /* TableViewCellQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D97ED91E5ED90F00A00425 /* TableViewCellQuestionCell.swift */; };
+		E8F7A1C01E5F839B004A7098 /* audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8F7A1BF1E5F839B004A7098 /* audio.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E8D97ED51E5EC37B00A00425 /* TableViewCellQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellQuestionController.swift; sourceTree = "<group>"; };
 		E8D97ED71E5ED4B800A00425 /* TableViewCellDetailQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDetailQuestion.swift; sourceTree = "<group>"; };
 		E8D97ED91E5ED90F00A00425 /* TableViewCellQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellQuestionCell.swift; sourceTree = "<group>"; };
+		E8F7A1BF1E5F839B004A7098 /* audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		E8385FB51E5920DC0019BB85 /* MisRecetas */ = {
 			isa = PBXGroup;
 			children = (
+				E8F7A1BF1E5F839B004A7098 /* audio.mp3 */,
 				E8D97ED71E5ED4B800A00425 /* TableViewCellDetailQuestion.swift */,
 				E8D97ED51E5EC37B00A00425 /* TableViewCellQuestionController.swift */,
 				E8D97ED91E5ED90F00A00425 /* TableViewCellQuestionCell.swift */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8385FC11E5920DC0019BB85 /* LaunchScreen.storyboard in Resources */,
+				E8F7A1C01E5F839B004A7098 /* audio.mp3 in Resources */,
 				E8385FBE1E5920DC0019BB85 /* Assets.xcassets in Resources */,
 				E8385FBC1E5920DC0019BB85 /* Main.storyboard in Resources */,
 			);

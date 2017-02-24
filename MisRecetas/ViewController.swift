@@ -14,22 +14,30 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         var question = ClassQuestion(title: "Les Numerós",
-                            image: #imageLiteral(resourceName: "tortilla"),
-                            type: "Tableau")
+                            image: #imageLiteral(resourceName: "numeros"),
+                            type: "Tableau",
+                            table: ["Zero", "Un", "Deux"],
+                            audioName: ["audio", "audio", "audio"])
         questions.append(question)
         question = ClassQuestion(title: "Les Pays",
-                        image: #imageLiteral(resourceName: "pizza"),
-                        type: "Tableau")
+                        image: #imageLiteral(resourceName: "paises"),
+                        type: "Tableau",
+                        table: ["Zero", "Un", "Deux"],
+                        audioName: ["audio", "audio", "audio"])
         questions.append(question)
         question = ClassQuestion(title: "La Communication en Class",
-                        image: #imageLiteral(resourceName: "hamburguesa"),
-                        type: "Questionner")
+                        image: #imageLiteral(resourceName: "clase"),
+                        type: "Questionner",
+                        table: ["Zero", "Un", "Deux"],
+                        audioName: ["audio", "audio", "audio"])
         questions.append(question)
         question = ClassQuestion(title: "Questioner Sur l' identidé",
-                        image: #imageLiteral(resourceName: "ensalada"),
-                        type: "Questionner")
+                        image: #imageLiteral(resourceName: "identidad"),
+                        type: "Questionner",
+                        table: ["Zero 0", "Un 1 ", "Deux 2"],
+                        audioName: ["audio", "audio", "audio"])
         questions.append(question)
     }
 
@@ -66,7 +74,7 @@ extension ViewController : UITableViewDataSource {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TableViewCellQuestionCell
         cell.imageQuestion.image = question.image
         cell.titleLabel.text = question.title
-        cell.typeLabel.text = question.type!
+        cell.typeLabel.text = ""
         
         cell.imageQuestion.layer.cornerRadius = 42.0
         cell.imageQuestion.clipsToBounds = true
@@ -75,11 +83,4 @@ extension ViewController : UITableViewDataSource {
         
         return cell
     }
-}
-
-extension ViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("He seleccionado fila \(indexPath.row)")
-    }
-    
 }

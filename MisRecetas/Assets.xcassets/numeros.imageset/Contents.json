@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "bolts-1835386_1280.jpg",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "hamburger-494706_1280.jpg",
       "scale" : "3x"
     }
   ],

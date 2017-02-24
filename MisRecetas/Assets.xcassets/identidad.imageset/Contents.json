@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "passport-315266_1280.jpg",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "caesar-salad-827403_1280.jpg",
       "scale" : "3x"
     }
   ],
