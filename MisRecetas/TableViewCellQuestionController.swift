@@ -1,4 +1,3 @@
-//
 //  TableViewCellQuestionController.swift
 //  MisRecetas
 //
@@ -32,72 +31,40 @@ class TableViewCellQuestionController: UIViewController {
 
 extension TableViewCellQuestionController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return question.subtitles.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-            break
-        case 1:
-            return question.table.count
-            break
-        default:
-            return 0
-            break;
-        }
+        return question.audios.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailQuestionCell", for: indexPath) as! TableViewCellDetailQuestion
-        
-        switch indexPath.section {
-        case 0:
-            switch indexPath.row {
-            case 0:
-                cell.keyLabel.text = ""
-                cell.valueLabel.text = self.question.table[indexPath.row]
-                break
-            default:
-                break
-            }
-        case 1:
-            cell.keyLabel.text = ""
-            cell.valueLabel.text = self.question.table[indexPath.row]
-            break;
-        default:
-            break
-        }
-        return cell
+        cell.keyLabel.text = ""
+        cell.valueLabel.text = self.question.audios[indexPath.row]["phrase"]
+         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var title = ""
-        switch section {
-        case 0:
-            title = "0 - 9"
-            break
-        case 1:
-            title = "10 - 11"
-            break
-        default:
-            break
-        }
-        return title
+        return question.subtitles[section]["subtitle"]
     }
     
 }
 
 extension TableViewCellQuestionController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: self.question.audioName[indexPath.row], ofType: "mp3" )!))
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
-        }catch {
-            print(error)
+        if self.question.audios[indexPath.row]["audio"] != ""{
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: self.question.audios[indexPath.row]["audio"], ofType: "mp3" )!))
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            }catch {
+                print(error)
+            }
+        }else{
+            
         }
+        
     }
     
 }

@@ -12,16 +12,14 @@ import UIKit
 class ClassQuestion: NSObject {
     var title : String!
     var image : UIImage!
-    var type: String!
-    var table: [String]!
-    var audioName: [String]!
+    var subtitles: [[String:String]]!
+    var audios: [[String:String]]!
     
-    init(title: String, image: UIImage, type: String, table: [String], audioName: [String]! ) {
+    init(title: String, image: UIImage, subtitles: [[String:String]]!, audios: [[String:String]]! ) {
         self.title = title
         self.image = image
-        self.type = type
-        self.table = table
-        self.audioName = audioName
+        self.subtitles = subtitles
+        self.audios = audios
     }
 }
 
