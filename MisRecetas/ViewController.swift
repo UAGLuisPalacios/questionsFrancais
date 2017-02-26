@@ -205,7 +205,7 @@ class ViewController: UIViewController {
                             ["audio" : "i8", "phrase" : "Ah ! C'est gratuit pour les étudiants."],
                             ["audio" : "j1", "phrase" : "Mademoiselle ?"],
                             ["audio" : "j2", "phrase" : "Bonjour monsieur. C'est pour une inscription. Voilà mon passeport, une photo et mon formulaire d'inscription."],
-                            ["audio" : "j3", "phrase" : "Bien, merci... Oh ! Mon café ! Je suis désole !... Votre nom... Martinez. Prenmom... Diane... Quelle est votre date de naissance ? Le 3 ou le 9 ?"],
+                            ["audio" : "j3", "phrase" : "Bien, merci... Oh ! Mon café ! Je suis désole !... Votre nom... Martinez. Prenom... Diane... Quelle est votre date de naissance ? Le 3 ou le 9 ?"],
                             ["audio" : "j4", "phrase" : "Le 9 ! C'est le 9 février 1995"],
                             ["audio" : "j5", "phrase" : "Bien, nationalité, française"],
                             ["audio" : "j6", "phrase" : "Oui"],

@@ -12,13 +12,18 @@ class TableViewCellQuestionController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     @IBOutlet weak var labelQuestionCell: UILabel!
     @IBOutlet weak var imageQuestionCell: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     var question : ClassQuestion!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.labelQuestionCell.text = question.title
         self.imageQuestionCell.image = question.image
+        
+        self.tableView.estimatedRowHeight = 108.0
+        
         // Do any additional setup after loading the view.
+        self.tableView.reloadData()
         
     }
     
